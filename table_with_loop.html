@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        table, td {
+        table, td, th {
             border: 1px solid black;
             border-collapse: collapse;
         }
@@ -19,7 +19,7 @@
         const flower = ["Rose", "Waterlily", "Jesmine", "Sunflower"];
         let sn = 1;
         let output = "<table>";
-            output += "<tr><th>SN</>th>Flower Name</th>";
+            output += "<tr><th>SN</th><th>Flower Name</th></tr>";
 
         for (let i = 0; i<flower.length; i++){
             output += "<tr>";
