@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Email Validation</h1>
+    <form action="" name="myform">
+        <input type="text" name="email" placeholder="Enter your Email"> <br>
+        <input type="text" name="conf_email" placeholder="Enter Email Again"> <br>
+        <input type="button" value="Submit" onclick="ValidationCheck()"> <br>
+
+    </form>
+
+    <script>
+        function ValidationCheck() {
+           let x = document.myform.email.value
+           let y = document.myform.conf_email.value
+           let z = /[A-z0-9]+@[A-z0-9]+\.[A-z]{2,4}/;
+
+           if(x.search(z)==-1){
+            alert("Invalid Email")
+           } else if(x != y){
+            alert("Does't match")
+           } else{
+            alert("Valid")
+           }
+        }
+    </script>
+</body>
+
+</html>
