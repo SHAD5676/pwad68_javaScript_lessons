@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #display {
+            width: 80px;
+            height: 20px;
+            background-color: aquamarine;
+            padding: 50px;
+        }
+        </style>
+    
+</head>
+<body>
+    <h3>Registration Form</h3>
+    <form action="" name="rgs">
+        Name: <br>
+        <input type="text" name="fullname" placeholder="Enter your name"><br>
+        Gender: <br>
+        <input type="radio" name="gender" value="male">Male
+        <input type="radio" name="gender" value="female">Female <br>
+        District: <br>
+        <select name="district" id="">
+            <option value="">select one</option>
+            <option>Dhaka</option>
+            <option>Sylhet</option>
+            <option>Rajshahi</option>
+            <option>Khulna</option>
+        </select><br>
+        Address: <br>
+        <textarea name="address" id="" placeholder="Enter address"></textarea><br>
+        Skills; <br>
+        <input type="checkbox" name="skils[]" value="html">HTML
+        <input type="checkbox" name="skils[]" value="css">CSS
+        <input type="checkbox" name="skils[]" value="javascript">JavaScript
+        <input type="checkbox" name="skils[]" value="php">PHP
+        <input type="checkbox" name="skils[]" value="mysql">MySQL <br>
+
+        
+        <button onclick="form_handle()" type="button">Submit</button><br>
+
+    </form>
+
+
+    <div id="display"></div>
+    <script>
+        function form_handle(){
+            let fname = document.rgs.fullname.value;
+            let gender = document.rgs.gender.value;
+            let address = document.rgs.address.value;
+            let skills = document.rgs.skills.checked.value; 
+            console.log(skills);
+
+            let output= fname + gender + address + district;
+            document.getElementById("display").innerHTML = output;
+        }
+    </script>
+
+
+    
+
+
+</body>
+</html>

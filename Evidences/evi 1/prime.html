@@ -4,39 +4,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Prime Number Check</title>
 </head>
 
 <body>
     <h3>Find Prime Number or Not</h3>
+
     <script>
         function CheckPrime(n) {
+            n = Number(n); // Convert input to number
 
-            if (n == 1) {
-                return n + "is not a prime number";
-            }  //If closing
+            if (n <= 1) {
+                return n + " is not a prime number";
+            }
 
             if (n == 2) {
-                return n + "is not a prime number";
-            }  //If closing
+                return n + " is a prime number";
+            }
 
-            else {
-
-                for (let x = 2; x < n; x++) {
-                    if (n % x == 0) {
-                        return n + "is not a prime number";
-                    }
+            for (let x = 2; x < n; x++) {
+                if (n % x == 0) {
+                    return n + " is not a prime number";
                 }
+            }
 
+            return n + " is a prime number";
+        }
 
-            } // Else Closing
-            return n + "is a prime number";
-        } // End Fuction
-        // Call Fuction
-        //document.write(CheckPrime(29));
-        document.write(CheckPrime(prompt("Enter a number")));
-
-
+        // Call function
+        let num = prompt("Enter a number:");
+        document.write(CheckPrime(num));
     </script>
 </body>
 

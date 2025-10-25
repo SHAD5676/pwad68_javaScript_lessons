@@ -3,28 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+    <title>Email Validation Example</title>
     <script>
-        function emailValidation(){
-            let pattern = /[A-z0-9._]+@[A-z0-9.-]+\.[A-z]{2,4}$/i;
-            if(document.myform.email.value.search(pattern)==1){
+        function emailValidation() {
+            // Fixed regex pattern
+            let pattern = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/i;
+            let email = document.myform.email.value;
+            let confirmEmail = document.myform.confirmEmail.value;
+
+            // Check if email is valid
+            if (email.search(pattern) == -1) {
                 alert("Invalid E-mail");
-
-            }else if(document.myform.email.value !=document.myform.confirmEmail.value){
-                alert("E-mail Does Not Matching");
-            }else{
+            } 
+            // Check if emails match
+            else if (email !== confirmEmail) {
+                alert("E-mail Does Not Match");
+            } 
+            else {
                 alert("Your E-mail address is fully valid");
-
-            } // Logic closing
+            }
         }
     </script>
-
+</head>
+<body>
     <form name="myform">
-        <strong>Email ID:&nbsp;</strong><input type="text" name="email" placeholder="Enter Email ID"/> <br><br>
-        <strong>Confirm Email ID:&nbsp;</strong><input type="text" name="confirmEmail" placeholder="Confirm Email ID" id=""> <br><br>
-        <input type="button" value="Submit" onclick="emailValidation()" name="save">
+        <strong>Email ID:&nbsp;</strong>
+        <input type="text" name="email" placeholder="Enter Email ID"/> <br><br>
+        <strong>Confirm Email ID:&nbsp;</strong>
+        <input type="text" name="confirmEmail" placeholder="Confirm Email ID"/> <br><br>
+        <input type="button" value="Submit" onclick="emailValidation()">
     </form>
 </body>
 </html>

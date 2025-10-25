@@ -9,26 +9,31 @@
 
 <body>
 
+
     <a href="#" onclick="myWindow()">Click Here</a>
+
     <script>
         function myWindow() {
 
-            //  let x = window.open("","abc","width=400,height=300, top=200, left=350") 
+            let = window.open("","abc","width=400,height=300, top=200, left=350") 
             let form = "";
             form += "<!DOCTYPE html>";
-            form += "<html><head><title>Form Window</title></head><body style='font-family: Arial;'>";
-            form += "<form>" ;   
-            form += "<h1>All Info</h1>";
+            form += "<html><head><title>Form Window</title></head>";
+            form += "<body style='font-family: Arial; padding:15px;'>";
+            form += "<h2>All Info</h2>";
+            form += "<form>";
             form += "Name: <input type='text' name='name' placeholder='Enter your name'><br><br>";
-            form += "Contact: <input type= 'number name='number' placeholder='Enter number";
-            form += "Text Area: "
+            form += "Contact: <input type='number' name='number' placeholder='Enter number'><br><br>";
+
+            form += "Text Area:  "
 
 
-            x.document.write(form);
+            document.write(form);
         }
 
 
     </script>
+
 </body>
 
 </html>

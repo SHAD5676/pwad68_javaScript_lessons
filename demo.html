@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popup Form Example</title>
+</head>
+<body>
+
+<a href="#" onclick="openForm(); return false;">Open Form</a>
+
+<script>
+function openForm() {
+    let popup = window.open("", "formPopup", "width=400,height=550,top=200,left=350");
+
+    let content = "";
+    content += "<h1>Simple Form</h1>";
+    content += "<form onsubmit='submitForm(event)'>";
+
+    // Name
+    content += "Name: <input type='text' id='name'><br><br>";
+
+    // Email
+    content += "Email: <input type='email' id='email'><br><br>";
+
+    // Contact Number
+    content += "Contact: <input type='text' id='contact'><br><br>";
+
+    // Checkbox
+    content += "Subscribe: <input type='checkbox' id='subscribe'> Yes<br><br>";
+
+    // Radio buttons
+    content += "Gender: ";
+    content += "<input type='radio' name='gender' value='Male' checked> Male ";
+    content += "<input type='radio' name='gender' value='Female'> Female<br><br>";
+
+    // Dropdown
+    content += "Country: <select id='country'>";
+    content += "<option value='Bangladesh'>Bangladesh</option>";
+    content += "<option value='India'>India</option>";
+    content += "<option value='USA'>USA</option>";
+    content += "</select><br><br>";
+
+    // Textarea
+    content += "Message: <br><textarea id='message' rows='4' cols='30'></textarea><br><br>";
+
+    content += "<input type='submit' value='Submit'>";
+    content += "</form>";
+
+    // Script inside popup to handle submission
+    content += `
+        <script>
+        function submitForm(e){
+            e.preventDefault();
+
+            let name = document.getElementById('name').value;
+            let email = document.getElementById('email').value;
+            let contact = document.getElementById('contact').value;
+            let subscribe = document.getElementById('subscribe').checked;
+
+            let genderElems = document.getElementsByName('gender');
+            let gender;
+            for(let i=0; i<genderElems.length; i++){
+                if(genderElems[i].checked){
+                    gender = genderElems[i].value;
+                }
+            }
+
+            let country = document.getElementById('country').value;
+            let message = document.getElementById('message').value;
+
+            document.body.innerHTML = "<h2>Form Submitted</h2>";
+            document.body.innerHTML += "Name: " + name + "<br>";
+            document.body.innerHTML += "Email: " + email + "<br>";
+            document.body.innerHTML += "Contact: " + contact + "<br>";
+            document.body.innerHTML += "Subscribe: " + (subscribe ? "Yes" : "No") + "<br>";
+            document.body.innerHTML += "Gender: " + gender + "<br>";
+            document.body.innerHTML += "Country: " + country + "<br>";
+            document.body.innerHTML += "Message: " + message + "<br>";
+        }
+        <\/script>
+    `;
+
+    popup.document.write(content);
+}
+</script>
+
+</body>
+</html>
