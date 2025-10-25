@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script language="JavaScript">
+
+        var sample2 = new Image()
+        sample2.src = "../javascript_lessons/img/sample1.jpeg"
+        var sample1 = new Image()
+        sample1.src = "../javascript_lessons/img/sample2.jpeg"
+
+        function switch2 () {
+            document.sample.src=sample2.src
+        }
+
+        function switch1 () {
+            document.sample.src=sample1.src
+    }
+    </script>
+</head>
+
+<body>
+
+
+    <a href="#" onMouseOver="switch2()" onMouseOut="switch1()"> <img name="sample" src="../javascript_lessons/img/sample1.jpeg"> </a>
+
+
+
+</body>
+
+</html>
