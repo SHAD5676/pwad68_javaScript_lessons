@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factorial</title>
+</head>
+<body>
+    <script>
+        function fact(a) {
+            a = Number(a);
+            let number = 1;
+
+            for (let i = 1; i <= a; i++) {
+                number *= i;
+            }
+
+            return a + " factorial is " + number;
+        }
+
+        let num = prompt("Enter a number:");
+        document.write(fact(num));
+    </script>
+</body>
+</html>
